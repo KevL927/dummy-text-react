@@ -1,6 +1,6 @@
 var React = require('react');
-//var paragraphGenerator = require('./Paragrah-Generator');
-
+ 
+var Selector = require('./Selector');
 require('./App.scss');
 
 module.exports = React.createClass({
@@ -19,7 +19,7 @@ module.exports = React.createClass({
             paragraphCount: event.target.value
         })
     },
-    
+   
     render: function() {
         return (
             <div className="App">
@@ -43,8 +43,12 @@ module.exports = React.createClass({
                         <option value="5">5 paragraphs</option>
                     </select>
                 </div>
-            </div> 
+                <div className="paragraph-view">
+                    <Selector numOfParagraphs={this.state.paragraphCount} />
+                </div>
+            </div>
         );
     }
     
 });
+
